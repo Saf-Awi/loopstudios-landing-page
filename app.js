@@ -12,8 +12,7 @@ function closeSideBar () {
 }
 
 function returnDefault () {
-    sideBar.style.display = 'flex';
-
+    sideBar.style.display = 'none';
 }
 
 
@@ -22,10 +21,10 @@ function handleWindowResize() {
 
     if (windowWidth > 768) {
         openSideBar(); 
-        returnDefault();
         openMenu.style.display = 'none'; 
         openMenu.removeEventListener('click', openSideBar);
     } else {
+        returnDefault();
         openMenu.style.display = 'block';
         openMenu.addEventListener('click', openSideBar);
     }
